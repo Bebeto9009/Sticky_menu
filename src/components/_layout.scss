@@ -1,4 +1,13 @@
-.container{
-  background-color: $base-color;
-  height: 300px;
+body {
+  background-color: $background-color;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
 }
