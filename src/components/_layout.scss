@@ -32,6 +32,12 @@ body {
   }
 }
 
+.sticky-nav #nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 @media all and (max-width: 600px) {
 
   .container {
