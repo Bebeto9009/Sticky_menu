@@ -36,11 +36,10 @@ export default class Menu {
             // }
 
             // second one and better
-            if (currentScroll > menuTop) {
-                while (--index && currentScroll + 50 < sections[index].offsetTop) {}
-                links.forEach((link) => link.classList.remove('active'));
-                links[index].classList.add('active');
-            }
+            while (--index && currentScroll + 50 < sections[index].offsetTop) {}
+            console.log('dziala')
+            links.forEach((link) => link.classList.remove('active'));
+            links[index].classList.add('active');
         } else {
             links.forEach((link) => link.classList.remove('active'));
         }
