@@ -1,17 +1,12 @@
 import 'styles.scss';
 import Menu from './Menu.js';
 
-// document.addEventListener('DOMContentLoaded', function(){
-//     const menu = new Menu;
-//     menu.init();
-// }, false);
-
 export const nav = document.getElementById('nav');
 export const menuTop = nav.offsetTop;
-console.log('init nav', nav)
-console.log('init menuTop', menuTop);
+export const links = document.querySelectorAll('li');
+export const sections = document.querySelectorAll('.section');
 
-window.addEventListener('scroll', (e) => {
+window.addEventListener('scroll', () => {
     const menu = new Menu;
     menu.init();
 }, false,)
