@@ -3,8 +3,7 @@ import Menu from './Menu.js';
 
 export const nav = document.getElementById('nav');
 export const menuTop = nav.offsetTop;
-export const links = document.querySelectorAll('li');
-export const sections = document.querySelectorAll('.section');
+export const links = document.querySelectorAll('li a');
 
 window.addEventListener('scroll', () => {
     const menu = new Menu;
