@@ -3,6 +3,7 @@ class Menu {
     constructor(nav) {
         this.menuTop = nav.offsetTop;
         this.links = nav.querySelectorAll('li a');
+        this.menu = nav;
     }
 
     stickmenu() {
@@ -30,6 +31,15 @@ class Menu {
         })
     }
 
+    smoothScroll() {
+        this.menu.addEventListener('click', (e) => {
+            e.preventDefault()
+            let clickTarget = e.target.hash;
+            let scrollTarget = document.querySelector(clickTarget)
+            scrollTarget.scrollIntoView({behavior:'smooth'});
+        })
+    }
+
     events() {
         window.addEventListener('scroll', () => {
             this.stickmenu();
@@ -39,6 +49,7 @@ class Menu {
 
     init() {
         this.events();
+        this.smoothScroll();
     }
 }
 
