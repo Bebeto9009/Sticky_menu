@@ -1,9 +1,12 @@
-import { menuTop, links } from './index.js';
+class Menu {
 
-export default class Menu {
+    constructor(nav) {
+        this.menuTop = nav.offsetTop;
+        this.links = nav.querySelectorAll('li a');
+    }
 
-    stickmenu(){
-        if (window.scrollY >= menuTop){
+    stickmenu() {
+        if (window.scrollY >= this.menuTop){
             document.body.classList.add('sticky-nav');
         } else {
             document.body.classList.remove('sticky-nav');
@@ -13,7 +16,7 @@ export default class Menu {
     watchmenu() {
         let currentScroll = window.scrollY;
 
-        links.forEach(link => {
+        this.links.forEach(link => {
             let section = document.querySelector(link.hash);
 
             if (
@@ -27,9 +30,16 @@ export default class Menu {
         })
     }
 
-    init() {
-        this.stickmenu();
-        this.watchmenu();
+    events() {
+        window.addEventListener('scroll', () => {
+            this.stickmenu();
+            this.watchmenu();
+        }, false);
     }
-};
 
+    init() {
+        this.events();
+    }
+}
+
+export default Menu;
